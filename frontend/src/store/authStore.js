@@ -5,16 +5,16 @@ export const useAuthStore = create((set) => ({
   user: null,
 
   loginWithGoogle: async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "http://localhost:5173/dashboard",
-        queryParams: {
-          prompt: "select_account",
-        },
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/dashboard`,
+      queryParams: {
+        prompt: "select_account",
       },
-    });
-  },
+    },
+  });
+},
 
   signInWithEmail: async (email, password) => {
     const { data, error } = await supabase.auth.signInWithPassword({
