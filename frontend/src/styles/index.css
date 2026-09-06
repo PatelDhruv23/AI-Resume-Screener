@@ -1,0 +1,79 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Custom Slider Styles for Weight Distribution */
+.weight-slider [data-slot="slider-track"] {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.weight-slider [data-slot="slider-range"] {
+  background: linear-gradient(90deg, #d4a574, #c9a068);
+  box-shadow: 0 0 15px rgba(212, 165, 116, 0.3);
+}
+
+.weight-slider [data-slot="slider-thumb"] {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #d4a574, #c9a068);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.weight-slider [data-slot="slider-thumb"]:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.6);
+}
+
+.weight-slider [data-slot="slider-thumb"]:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar for modern lookup */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 165, 116, 0.2);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 165, 116, 0.4);
+}
+
+/* Hide number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Base typography enhancements */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth selection colors */
+::selection {
+  background: rgba(212, 165, 116, 0.3);
+  color: white;
+}
